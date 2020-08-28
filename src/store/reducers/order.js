@@ -1,1 +1,3 @@
-// It will hold the action creators for submitting the order
+import * as actionTypes from "../actions/actionTypes";
+
+const reducer = (state, action) => {};
