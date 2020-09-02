@@ -4,6 +4,7 @@ import { connect } from "react-redux";
 
 import CheckoutSummary from "../../components/Order/CheckoutSummary/CheckoutSummary";
 import ContactData from "./ContactData/ContactData";
+import * as actions from "../../store/actions/index";
 
 class Checkout extends Component {
   checkoutCancelledHandler = () => {
@@ -35,7 +36,7 @@ class Checkout extends Component {
         </div>
       );
     }
-    return <div>{summary}</div>;
+    return summary;
   }
 }
 
