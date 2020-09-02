@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
+
 import Input from "../../components/UI/Input/Input";
 import Button from "../../components/UI/Button/Button";
 import Spinner from "../../components/UI/Spinner/Spinner";
@@ -13,7 +14,7 @@ class Auth extends Component {
         elementType: "input",
         elementConfig: {
           type: "email",
-          placeholder: "E-Mail Address",
+          placeholder: "Mail Address",
         },
         value: "",
         validation: {
@@ -133,7 +134,6 @@ class Auth extends Component {
 
     if (this.props.error) {
       errorMessage = <p>{this.props.error.message}</p>;
-      // ^^^ error provided by firebase
     }
 
     return (
@@ -143,7 +143,7 @@ class Auth extends Component {
           {form}
           <Button btnType="Success">SUBMIT</Button>
         </form>
-        <Button btnType="Danger" clicked={this.switchAuthModeHandler}>
+        <Button clicked={this.switchAuthModeHandler} btnType="Danger">
           SWITCH TO {this.state.isSignup ? "SIGNIN" : "SIGNUP"}
         </Button>
       </div>
