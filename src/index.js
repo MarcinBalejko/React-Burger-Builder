@@ -29,7 +29,7 @@ const store = createStore(
 
 const app = (
   <Provider store={store}>
-    <BrowserRouter>
+    <BrowserRouter basename="react-my-burger-422f1">
       <App />
     </BrowserRouter>
   </Provider>
