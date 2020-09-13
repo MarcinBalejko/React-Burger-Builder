@@ -9,7 +9,7 @@ import SideDrawer from "../../components/Navigation/SideDrawer/SideDrawer";
 const Layout = (props) => {
   const [sideDrawerIsVisible, setSideDrawerIsVisible] = useState(false);
 
-  const sideDrawerCloseHandler = () => {
+  const sideDrawerClosedHandler = () => {
     setSideDrawerIsVisible(false);
   };
 
@@ -26,7 +26,7 @@ const Layout = (props) => {
       <SideDrawer
         isAuth={props.isAuthenticated}
         open={sideDrawerIsVisible}
-        closed={sideDrawerCloseHandler}
+        closed={sideDrawerClosedHandler}
       />
       <main className={classes.Content}>{props.children}</main>
     </Aux>
