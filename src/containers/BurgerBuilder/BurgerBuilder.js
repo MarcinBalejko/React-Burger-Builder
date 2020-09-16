@@ -1,6 +1,5 @@
 import React, { useState, useEffect, useCallback } from "react";
-import { useDispatch, useSelector } from "react-redux";
-// ^^^ could be also done with {connect}
+import { connect, useDispatch, useSelector } from "react-redux";
 
 import Aux from "../../hoc/Aux/Aux";
 import Burger from "../../components/Burger/Burger";
@@ -45,14 +44,17 @@ const BurgerBuilder = (props) => {
   }, [onInitIngredients]);
 
   const updatePurchaseState = (ingredients) => {
-    const sum = Object.keys(ingredients)
-      .map((igKey) => {
-        return ingredients[igKey];
-      })
-      .reduce((sum, el) => {
-        return sum + el;
-      }, 0);
-    return sum > 0;
+    if (ingredients) {
+      const sum = Object.keys(ingredients)
+        .map((igKey) => {
+          return ingredients[igKey];
+        })
+        .reduce((sum, el) => {
+          return sum + el;
+        }, 0);
+
+      return sum > 0;
+    }
   };
 
   const purchaseHandler = () => {
